@@ -32,7 +32,7 @@ First, secure the database as you always should
 sudo mysql_secure_installation
 ```
 
-Then, set up the database and user for the orm project. **Caution**: This sets the password from [dbsetup.sql](dbsetup.sql)! Use at your own risk - it is better to locally change the password in [dbsetup.sql](dbsetup.sql) and [django/orm/settings.py](django/orm/settings.py) (line 81)!
+Then, set up the database and user for the orm project. **Caution**: This sets the password from [dbsetup.sql](dbsetup.sql)! Use at your own risk - it is better to locally change the password in [dbsetup.sql](dbsetup.sql) (line 2) and [django/orm/orm/settings.py](django/orm/settings.py) (line 81)!
 ```bash
 sudo mysql -u root -p < dbsetup.sql
 ```
