@@ -36,3 +36,9 @@ Then, set up the database and user for the orm project. **Caution**: This sets t
 ```bash
 sudo mysql -u root -p < dbsetup.sql
 ```
+
+Then, let django do its own table setups. Go to the directory django/orm (where manage.py is) and run:
+
+```bash
+python manage.py migrate
+```
