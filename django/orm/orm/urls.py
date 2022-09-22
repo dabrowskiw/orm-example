@@ -19,5 +19,6 @@ from django.urls import path, include
 urlpatterns = [
     path('directsql/', include('directsql.urls')),
     path('manualorm/', include('manualorm.urls')),
+    path('djangoorm/', include('djangoorm.urls')),
     path('admin/', admin.site.urls),
 ]

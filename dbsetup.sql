@@ -3,8 +3,10 @@ CREATE USER ormuser@localhost IDENTIFIED BY '5YAPwyTWhPwcLuX';
 GRANT ALL PRIVILEGES ON orm.* TO ormuser@localhost;
 FLUSH PRIVILEGES;
 
-CREATE TABLE patient(id INT PRIMARY KEY NOT NULL AUTO_INCREMENT, name VARCHAR(200), age INT, station_id, CONSTRAINT FOREIGN KEY(station_id) REFERENCES station(id));
+DROP TABLE IF EXISTS station;
+DROP TABLE IF EXISTS patient;
 CREATE TABLE station(id INT PRIMARY KEY NOT NULL AUTO_INCREMENT, name VARCHAR(200), capacity INT);
+CREATE TABLE patient(id INT PRIMARY KEY NOT NULL AUTO_INCREMENT, name VARCHAR(200), age INT, station_id INT, CONSTRAINT FOREIGN KEY(station_id) REFERENCES station(id));
 
 INSERT INTO station(id, name, capacity) VALUES(1, "Behandlung", 1);
 INSERT INTO station(id, name, capacity) VALUES(2, "Genesung", 10);
