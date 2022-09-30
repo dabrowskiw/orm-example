@@ -35,6 +35,8 @@ def showpatient(request, id):
         patient = cursor.fetchone()
         cursor.execute("SELECT id, name FROM station WHERE id='" + str(patient[2]) + "';")
         station = cursor.fetchone()
-        stationlink = '<a href="../../showstation/' + str(station[0]) + '">' + station[1] + "</a>"
+        stationlink = ""
+        if station is not None:
+            stationlink = '<a href="../../showstation/' + str(station[0]) + '">' + station[1] + "</a>"
         return HttpResponse(response.format(name=patient[0], age=patient[1], station=stationlink))
 
